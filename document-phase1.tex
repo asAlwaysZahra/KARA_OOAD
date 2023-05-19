@@ -3,10 +3,12 @@
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{enumitem}
+\usepackage{pifont}
+\usepackage{longtable}
 \usepackage{xepersian}
 
 \settextfont{Vazirmatn}
-\linespread{1.3}
+\linespread{1.25}
 
 \author{متین اعظمی}
 \author{محمد حسینی}
@@ -49,6 +51,7 @@
 		ترم پاییز 1401
 
 	\end{center}
+
 	\newpage
 	\tableofcontents
 	\newpage
@@ -358,8 +361,7 @@
 
 	\newpage
 	\subsection{شرح کلی}
-	\textbf{کارا}
-	، سامانه‌ای الکترونیکی است که بر بستر شبکه قابل دسترسی و به منظور استفاده برای کارجویان و کارفرمایان، جهت بهبود فرآیند کاریابی و استخدام به صورت الکترونیکی راه اندازی شده است. از اهداف این سامانه می‌توان به کاهش مراجعه اشخاص به دفاتر کاریابی و تسریع و بهبود فرایند استخدام اشاره کرد.
+	\textbf{کارا}، سامانه‌ای الکترونیکی و قابل دسترسی بر بستر شبکه است. این سامانه به منظور استفاده برای کارجویان و کارفرمایان، جهت بهبود فرآیند کاریابی و استخدام به صورت الکترونیکی راه اندازی شده است. از اهداف این سامانه می‌توان به کاهش مراجعه اشخاص به دفاتر کاریابی و تسریع و بهبود فرایند استخدام اشاره کرد.
 
 	\subsubsection{چشم‌انداز محصول}
 	این سامانه با هدف و چشم‌انداز هوشمند‌سازی و هدفمند کردن کاریابی در سازمان‌ها، شرکت‌ها و صنایع مختلف توسعه داده شده است. هدف این سامانه این است که روند آشنایی \textbf{کارفرما} و \textbf{کارجو} با یکدیگر را تا حد امکان ساده کند و همچنین شبکه‌ای از \textbf{شرکت}‌ها، کارجویان، و کارفرمایان پیاده‌سازی کند تا ارتباط و تعامل بین کاربران را افزایش دهد. از امکانات این سامانه می‌توان به پیشنهاد هوشمندانه کارجویان مناسب، طبق نیاز‌های استخدامی کارفرما و پیشنهاد هدفمندانه موقعیت‌های شغلی مناسب به کارجو طبق اطلاعات شخص اشاره کرد.
@@ -945,19 +947,212 @@
 
 	\newpage
 	\section{برنامه تکرار و برنامه مرحله}
-	\begin{table}[h]
-		\centering\begin{tabular}{|c|c|c|}
-			\hline
-			Column 1 & Column 2 & Column 3 \\
-			\hline
-			Row 1, Column 1 & Row 1, Column 2 & Row 1, Column 3 \\
-			\hline
-			Row 2, Column 1 & Row 2, Column 2 & Row 2, Column 3 \\
-			\hline
-		\end{tabular}
-		\caption{Example table}
-		\label{tab:example}
-	\end{table}
+	\begin{longtable}{|c|c|c|c|c|}
+		\hline
+		نیازمندی & وابستگی‌ها & تکرار اول & تکرار دوم & تکرار سوم \\
+			&& 8 هفته & ‌8 هفته &‌ 8 هفته\\
+
+		\hline
+		R1 & R21 &‌ \ding{51} & &\\
+		\hline
+		R2 & - &  &  & \ding{51} \\
+		\hline
+ 		R3 & R39 &  & \ding{51} & \\
+		\hline
+		R4 & R60 &  &  & \ding{51} \\
+		\hline
+		R5 & R22-R66 & \ding{51} &  & \\
+		\hline
+		R6 & R22-R66 & \ding{51} &  & \\
+		\hline
+		R7 & R43 &  & \ding{51} & \\
+		\hline
+		R8 & R88 &  &  & \ding{51} \\
+		\hline
+		R9 & - & \ding{51} &  & \\
+		\hline
+		R10 & - &  & \ding{51} & \\
+		\hline
+		R11 & - &  &  & \ding{51} \\
+		\hline
+		R12 & - & \ding{51} &  & \\
+		\hline
+		R13 & R21 - R45 - R47 - R60 - R77 - R78 & \ding{51} &  & \\
+		\hline
+		R14 & - & \ding{51} &  & \\
+		\hline
+		R15 & - & \ding{51} &  & \\
+		\hline
+		R16 & R15 & \ding{51} &  & \\
+		\hline
+		R17 & R15 & \ding{51} &  & \\
+		\hline
+		R18 & R15 & \ding{51} &  & \\
+		\hline
+		R19 & - &  &  & \ding{51} \\
+		\hline
+		R20 & - &  &  & \ding{51} \\
+		\hline
+		R21 & - & \ding{51} &  & \\
+		\hline
+		R22 & R15 & \ding{51} &  & \\
+		\hline
+		R23 & R37 & \ding{51} &  & \\
+		\hline
+		R24 & R15 & \ding{51} &  & \\
+		\hline
+		R25 & R15 & \ding{51} &  & \\
+		\hline
+		R26 & R68 & \ding{51} &  & \\
+		\hline
+		R27 & R68 &  & \ding{51} & \\
+		\hline
+		R28 & R68 & \ding{51} &  & \\
+		\hline
+		R29 & - & \ding{51} &  & \\
+		\hline
+		R30 & R29 &  & \ding{51} & \\
+		\hline
+		R31 & R74 &  & \ding{51} & \\
+		\hline
+		R32 & R29 &  &  & \ding{51} \\
+		\hline
+		R33 & - & \ding{51} &  & \\
+		\hline
+		R34 & R69 &  &  & \ding{51} \\
+		\hline
+		R35 & R27 - R28 &  &  & \ding{51} \\
+		\hline
+		R36 & R35 &  &  & \ding{51} \\
+		\hline
+		R37 & R33 &  & \ding{51} & \\
+		\hline
+		R38 & R37 - R52 &  & \ding{51} & \\
+		\hline
+		R39 & - &  & \ding{51} & \\
+		\hline
+		R40 & R52 &  & \ding{51} & \\
+		\hline
+		R41 & - &  &  & \ding{51} \\
+		\hline
+		R42 & R29 &  &  & \ding{51} \\
+		\hline
+		R43 & - &  & \ding{51} & \\
+		\hline
+		R44 & - & \ding{51} &  & \\
+		\hline
+		R45 & R44 & \ding{51} &  & \\
+		\hline
+		R46 & R22 &  &  & \ding{51} \\
+		\hline
+		R47 & - & \ding{51} &  & \\
+		\hline
+		R48 & R15 - R47 &  &  & \ding{51} \\
+		\hline
+		R49 & R52 &  &  & \ding{51} \\
+		\hline
+		R50 & - &  &  & \ding{51} \\
+		\hline
+		R51 & R50 &  &  & \ding{51} \\
+		\hline
+		R52 & R22 & \ding{51} &  & \\
+		\hline
+		R53 & R52 & \ding{51} &  & \\
+		\hline
+		R54 & R52 &  &  & \ding{51} \\
+		\hline
+		R55 & R52 & \ding{51} &  & \\
+		\hline
+		R56 & - &  &  & \ding{51} \\
+		\hline
+		R57 & R22 &  &  & \ding{51} \\
+		\hline
+		R58 & - &  &  & \ding{51} \\
+		\hline
+		R59 & R14 &  & \ding{51} & \\
+		\hline
+		R60 & R59 &  & \ding{51} & \\
+		\hline
+		R61 & R2 &  &  & \ding{51} \\
+		\hline
+		R62 & - &  & \ding{51} & \\
+		\hline
+		R63 & - &  & \ding{51} & \\
+		\hline
+		R64 & R63 &  & \ding{51} & \\
+		\hline
+		R65 & - &  & \ding{51} & \\
+		\hline
+		R66 & R15 & \ding{51} &  & \\
+		\hline
+		R67 & R66 & \ding{51} &  & \\
+		\hline
+		R68 & - & \ding{51} &  & \\
+		\hline
+		R69 & R68 &  & \ding{51} & \\
+		\hline
+		R70 & - &  & \ding{51} & \\
+		\hline
+		R71 & R68 & \ding{51} &  & \\
+		\hline
+		R72 & R29 & \ding{51} &  & \\
+		\hline
+		R73 & R29 & \ding{51} &  & \\
+		\hline
+		R74 & R7 &  & \ding{51} & \\
+		\hline
+		R75 & R30 - R72 &  & \ding{51} & \\
+		\hline
+		R76 & R22 & \ding{51} &  & \\
+		\hline
+		R77 & R45 &  & \ding{51} & \\
+		\hline
+		R78 & - &  & \ding{51} & \\
+		\hline
+		R79 & R52 &  & \ding{51} & \\
+		\hline
+		R80 & R72 &  & \ding{51} & \\
+		\hline
+		R81 & - &  &  & \ding{51} \\
+		\hline
+		R82 & - &  & \ding{51} & \\
+		\hline
+		R83 & R78 &  &  & \ding{51} \\
+		\hline
+		R84 & - &  &  & \ding{51} \\
+		\hline
+		R85 & - &  &  & \ding{51} \\
+		\hline
+		R86 & R22 & \ding{51} &  & \\
+		\hline
+		R87 & R67 &  &  & \ding{51} \\
+		\hline
+		R88 & R14 &  &  & \ding{51} \\
+		\hline
+		R89 & R88 &  &  & \ding{51} \\
+		\hline
+		R90 & - &  &  & \ding{51} \\
+		\hline
+		R91 & - &  &  & \ding{51} \\
+		\hline
+		R92 & R11 &  &  & \ding{51} \\
+		\hline
+		R93 & R22 &  & \ding{51} & \\
+		\hline
+		R94 & R93 &  & \ding{51} & \\
+		\hline
+		R95 & - &  & \ding{51} & \\
+		\hline
+		R96 & R95 &  & \ding{51} & \\
+		\hline
+		R97 & R29 &  & \ding{51} & \\
+		\hline
+		&  & 34 & 31 & 32 \\
+		\hline
+	\caption{برنامه تکرار و برنامه مرحله}
+	\label{tab:tekrar}
+	\end{longtable}
+
 
 	\begin{figure}
 		\centering
@@ -973,7 +1168,6 @@
 
 	\newpage
 	\section{استخراج موردکابردها و مدل‌سازی تعامل کنشگر-سیستم}
-
 	\begin{itemize}
 		\item First item
 		\item Second item
