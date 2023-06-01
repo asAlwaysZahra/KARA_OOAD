@@ -1,5 +1,7 @@
 \documentclass[12pt]{article}
 
+\usepackage[table, svgnames, dvipsnames]{xcolor}
+\usepackage{makecell, cellspace, caption}
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{float}
@@ -8,11 +10,12 @@
 \usepackage{float}
 \usepackage{fontawesome5}
 \usepackage{longtable}
+\usepackage{tabularx}
 \usepackage[stable]{footmisc}
 \usepackage[a4paper,
-		bindingoffset=0.2in,
-		left=0.7in,
-		right=0.7in,
+		bindingoffset=0in,
+		left=0.8in,
+		right=0.8in,
 		top=0.8in,
 		bottom=1.5in,
 		footskip=.5in]{geometry}
@@ -164,10 +167,10 @@
 		\textbf{سرور ابری:\label{ref:cs}}
 		یک نوع سرور می‌باشد که در رایانش ابری ایجاد شده و بر روی بستر اینترنت برای بسیاری از کاربران ارائه می‌شود.
 		\item
-		\textbf{Web Server:\label{ref:ws}}
+		\textbf{\lr{Web Server}\label{ref:ws}}:
 		نرم‌افزاری کامپیوتری است که اصلی‌ترین وظیفه آن ارائه اطلاعات و سرویس‌های درخواست شده در قالب صفحات وب به کاربران است.
 		\item
-		\textbf{PDF:\label{ref:pdf}}
+		\textbf{PDF\label{ref:pdf}}:
 		کوته‌شده عبارت
 		\lr{Portable Document Format}
 		است.
@@ -221,7 +224,7 @@
 		\textbf{دستیار صوتی:}
 		یک عامل نرم‌افزاری است که با صوت به کاربر کمک می‌کند از سیستم استفاده کند.
 		\item
-		\textbf{کیو-آر کد}
+		\textbf{\lr{QR Code}}
 		کوته‌شده عبارت
 		\lr{Quick-Response Code}
 		و معادل فارسی آن "رمزینه پاسخ سریع" می‌باشد که یک رمزینه ماتریسی است که دربردارنده چیدمانی از نقطه‌های مربع‌شکل سیاه‌رنگ (با نام ماژول) بر روی زمینه سفید است. داده نهفته می‌تواند نوشته، نشانی وب، پیامک، شماره تلفن، اطلاعات کارت ویزیت یا داده دیگری باشد.
@@ -351,7 +354,7 @@
 		و
 		\href{https://fa.wikipedia.org/wiki/%D8%B2%D8%A8%D8%A7%D9%86_%D9%86%D9%88%D8%B4%D8%AA%D8%A7%D8%B1%DB%8C}{زبان نوشتاری}. بدین معنی که رایانه‌ها را قادر سازیم که گفتار یا نوشتار تولید شده در قالب و ساختار یک زبان طبیعی را تحلیل و درک نموده یا آن را تولید نمایند.
 		\item
-		\textbf{چت جی‌پی‌تی:}
+		\textbf{\lr{Chat GPT}:}
 		\lr{Chat GPT}
 		به معنای
 		\lr{Generative Pre-trained Transformer}
@@ -2829,123 +2832,131 @@
 	\subsection{مدل‌سازی تعامل کنشگر سیستم}
 	بعد از مشخص شدن مورد کاربردها، برای برخی از آنها چگونگی تعامل کنشگر با سیستم را مشخص کرده‌ایم. مورد کاربردهایی برای این کار انتخاب شده‌اند که جزئیات آنها از اهمیت بالاتری برخوردار هستند.
 	برای این کار از یک جدول دو ستونی استفاده شده است که ستون راست ورودی کنشگرهای مورد نظر و ستون سمت چپ پاسخ‌های سیستم را مشخص می‌کند.
-\begin{center}
-	\begin{table}[H]
-		\caption{جدول مورد کاربرد گسترده 9}
-		\label{tab:ext-uc9}
 
-		\begin{tabular}{|rr|}
-			\hline
-			\multicolumn{2}{|r|}{\textbf{:UC9 مشاهده حقوق تخمین زده شده از ماشین حساب حقوق}}                                                                                                                                                                           \\ \hline
-			\multicolumn{2}{|r|}{\textbf{پیش شرط: -}}                                                                                                                                                                                                                                          \\ \hline
-			\multicolumn{1}{|c|}{\textbf{کنشگر: کاربر بازدیدکننده}}                                                                                            & \multicolumn{1}{c|}{\textbf{سیستم:سامانه کارا}}                                                                               \\ \hline
-			\multicolumn{1}{|c|}{\textbf{}}                                                                                                                    & ۰-  سیستم صفحه اصلی را نشان می‌دهد.                                                                                           \\ \hline
-			\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۱- TUCBW کاربر بازدیدکننده در صفحه  روی پیوند \\ «ماشین حساب حقوق» کلیک می‌کند.\end{tabular}}      & \begin{tabular}[c]{@{}r@{}}۲- سیستم دو گزینه «ثبت حقوق دریافتی» \\ و «تخمین حقوق» را نمایش می‌دهد.\end{tabular}               \\ \hline
-			\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۳- کاربر بازدیدکننده روی گزینه «تخمین حقوق»\\  کلیک می‌کند.\end{tabular}}                          & \begin{tabular}[c]{@{}r@{}}۴- سیستم فرمی شامل اطلاعات عنوان شغلی، \\ سطح ارشدیت، سابقه کاری و … را نمایش می‌دهد.\end{tabular} \\ \hline
-			\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۵- کاربر بازدیدکننده اطلاعات خود را وارد می‌کند\\  سپس روی دکمه «تخمین» کلیک می‌کند.\end{tabular}} & \begin{tabular}[c]{@{}r@{}}۶- سیستم براساس اطلاعات موجود یک \\ حقوق تخمین زده شده را نمایش می‌دهد.\end{tabular}               \\ \hline
-			\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۷- TUCEW کاربر بازدیدکننده حقوق\\  تخمین زده شده را مشاهده می‌کند.\end{tabular}}                   & \multicolumn{1}{l|}{}                                                                                                         \\ \hline
+	\begin{center}
+		\begin{table}[H]
+			\caption{جدول مورد کاربرد گسترده 9}
+			\label{tab:ext-uc9}
+			\begin{tabular}{|rr|}
+				\hline
+				\rowcolor{Gainsboro!60}
+				\multicolumn{2}{|r|}{\textbf{:UC9 مشاهده حقوق تخمین زده شده از ماشین حساب حقوق}}                                                                                                                                                                           \\ \hline
+				\multicolumn{2}{|r|}{\textbf{پیش شرط: -}}                                                                                                                                                                                                                                          \\ \hline
+				\multicolumn{1}{|c|}{\textbf{کنشگر: کاربر بازدیدکننده}}                                                                                            & \multicolumn{1}{c|}{\textbf{سیستم:سامانه کارا}}                                                                               \\ \hline
+				\multicolumn{1}{|c|}{\textbf{}}                                                                                                                    & ۰-  سیستم صفحه اصلی را نشان می‌دهد.                                                                                           \\ \hline
+				\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۱- TUCBW کاربر بازدیدکننده در صفحه  روی پیوند \\ «ماشین حساب حقوق» کلیک می‌کند.\end{tabular}}      & \begin{tabular}[c]{@{}r@{}}۲- سیستم دو گزینه «ثبت حقوق دریافتی» \\ و «تخمین حقوق» را نمایش می‌دهد.\end{tabular}               \\ \hline
+				\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۳- کاربر بازدیدکننده روی گزینه «تخمین حقوق»\\  کلیک می‌کند.\end{tabular}}                          & \begin{tabular}[c]{@{}r@{}}۴- سیستم فرمی شامل اطلاعات عنوان شغلی، \\ سطح ارشدیت، سابقه کاری و … را نمایش می‌دهد.\end{tabular} \\ \hline
+				\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۵- کاربر بازدیدکننده اطلاعات خود را وارد می‌کند\\  سپس روی دکمه «تخمین» کلیک می‌کند.\end{tabular}} & \begin{tabular}[c]{@{}r@{}}۶- سیستم براساس اطلاعات موجود یک \\ حقوق تخمین زده شده را نمایش می‌دهد.\end{tabular}               \\ \hline
+				\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۷- TUCEW کاربر بازدیدکننده حقوق\\  تخمین زده شده را مشاهده می‌کند.\end{tabular}}                   & \multicolumn{1}{l|}{}                                                                                                         \\ \hline
 
-		\end{tabular}
-	\end{table}
+			\end{tabular}
+		\end{table}
 
-	\begin{table}[H]
-		\caption{جدول مورد کاربرد گسترده 11}
-		\label{tab:ext-uc11}
+		\begin{table}[H]
+			\caption{جدول مورد کاربرد گسترده 11}
+			\label{tab:ext-uc11}
+			\begin{tabular}{|rr|}
+				\hline
+				\rowcolor{Gainsboro!60}
+				\multicolumn{2}{|r|}{\textbf{:UC11 ارسال پیام خصوصی}}                                                                                                                                                                                                                                                                                                                                        \\ \hline
+				\multicolumn{2}{|r|}{\textbf{پیش شرط: کاربر باید وارد حساب کاربری خود شده باشد.}}                                                                                                                                                                                                                                                                                                                                    \\ \hline
+				\multicolumn{1}{|c|}{\textbf{کنشگر:کاربر}}                                                                                                                                                                                                                    & \multicolumn{1}{c|}{\textbf{سیستم:سامانه کارا}}                                                                                                      \\ \hline
+				\multicolumn{1}{|l|}{\textbf{}}                                                                                                                                                                                                                               & ۰- سیستم صفحه اصلی را نمایش می‌دهد.                                                                                                                  \\ \hline
+				\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۱- TUCBW کاربر روی پیوند "پیام خصوصی"\\  در صفحه اصلی کلیک می‌کند.\end{tabular}}                                                                                                                              & ۲- سیستم صفحه پیام‌رسان را نمایش می‌دهد.                                                                                                             \\ \hline
+				\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۳-\\ الف) اگر این اولین پیام خصوصی به کاربر مورد نظر \\ است، کاربر ایمیل شخص مورد نظر را وارد می‌کند.\\  ب) در غیر این صورت، کاربر مورد نظر را از\\ لیست گفتگوها برای ارسال پیام انتخاب می‌کند.\end{tabular}} & \begin{tabular}[c]{@{}r@{}}۴- در صورت موجود بودن شخص، صفحه‌ی گفتگو \\ شخص مورد نظر به همراه فیلد شرح پیام و پیوست \\ نمایش داده می‌شود.\end{tabular} \\ \hline
+				\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۵- کاربر صفحه گفتگو را مشاهده می‌کند و \\ متن پیام خود را وارد می‌کند. در نهایت روی دکمه \\ "ارسال" کلیک می‌کند.\end{tabular}}                                                                                & \begin{tabular}[c]{@{}r@{}}۶- سیستم پیامی متناسب با نتیجه\\  ارسال پیام نمایش می‌دهد.\end{tabular}                                                   \\ \hline
+				\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۷- TUCEW کاربر نتیجه ارسال پیام خصوصی \\ خود را مشاهده می‌کند.\end{tabular}}                                                                                                                                  & \multicolumn{1}{l|}{}                                                                                                                                \\ \hline
 
-		\begin{tabular}{|rr|}
-			\hline
-			\multicolumn{2}{|r|}{\textbf{:UC11 ارسال پیام خصوصی}}                                                                                                                                                                                                                                                                                                                                        \\ \hline
-			\multicolumn{2}{|r|}{\textbf{پیش شرط: کاربر باید وارد حساب کاربری خود شده باشد.}}                                                                                                                                                                                                                                                                                                                                    \\ \hline
-			\multicolumn{1}{|c|}{\textbf{کنشگر:کاربر}}                                                                                                                                                                                                                    & \multicolumn{1}{c|}{\textbf{سیستم:سامانه کارا}}                                                                                                      \\ \hline
-			\multicolumn{1}{|l|}{\textbf{}}                                                                                                                                                                                                                               & ۰- سیستم صفحه اصلی را نمایش می‌دهد.                                                                                                                  \\ \hline
-			\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۱- TUCBW کاربر روی پیوند "پیام خصوصی"\\  در صفحه اصلی کلیک می‌کند.\end{tabular}}                                                                                                                              & ۲- سیستم صفحه پیام‌رسان را نمایش می‌دهد.                                                                                                             \\ \hline
-			\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۳-\\ الف) اگر این اولین پیام خصوصی به کاربر مورد نظر \\ است، کاربر ایمیل شخص مورد نظر را وارد می‌کند.\\  ب) در غیر این صورت، کاربر مورد نظر را از\\ لیست گفتگوها برای ارسال پیام انتخاب می‌کند.\end{tabular}} & \begin{tabular}[c]{@{}r@{}}۴- در صورت موجود بودن شخص، صفحه‌ی گفتگو \\ شخص مورد نظر به همراه فیلد شرح پیام و پیوست \\ نمایش داده می‌شود.\end{tabular} \\ \hline
-			\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۵- کاربر صفحه گفتگو را مشاهده می‌کند و \\ متن پیام خود را وارد می‌کند. در نهایت روی دکمه \\ "ارسال" کلیک می‌کند.\end{tabular}}                                                                                & \begin{tabular}[c]{@{}r@{}}۶- سیستم پیامی متناسب با نتیجه\\  ارسال پیام نمایش می‌دهد.\end{tabular}                                                   \\ \hline
-			\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۷- TUCEW کاربر نتیجه ارسال پیام خصوصی \\ خود را مشاهده می‌کند.\end{tabular}}                                                                                                                                  & \multicolumn{1}{l|}{}                                                                                                                                \\ \hline
+			\end{tabular}
+		\end{table}
 
-		\end{tabular}
-	\end{table}
+		\begin{table}[H]
+			\caption{جدول مورد کاربرد گسترده 13}
+			\label{tab:ext-uc13}
+			\begin{tabular}{|rr|}
+				\hline
+				\rowcolor{Gainsboro!60}
+				\multicolumn{2}{|r|}{\textbf{:UC13 جستجوی پیشرفته}}                                                                                                                                                                                                                                           \\ \hline
+				\multicolumn{2}{|r|}{\textbf{پیش شرط: -}}                                                                                                                                                                                                                                                                             \\ \hline
+				\multicolumn{1}{|c|}{\textbf{کنشگر: کاربر}}                                                                                           & \multicolumn{1}{c|}{\textbf{سیستم: سامانه کارا}}                                                                                                                              \\ \hline
+				\multicolumn{1}{|l|}{\textbf{}}                                                                                                       & ۰- سیستم صفحه اصلی را نمایش می‌دهد.                                                                                                                                           \\ \hline
+				\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۱- TUCBW کاربر روی پیوند «جستجوی \\ پیشرفته» در صفحه اصلی کلیک می‌کند.\end{tabular}}  & \begin{tabular}[c]{@{}r@{}}۲- سیستم صفحه جستجوی پیشرفته و گزینه‌های\\  پالایه جستجوی پیشرفته مانند گروه شغلی،\\  شهر، نوع همکاری، سبک تعامل و … را نمایش می‌دهد.\end{tabular} \\ \hline
+				\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۳- کاربر اطلاعات مورد نظر خود را \\ در صفحه جستجوی پیشرفته وارد می‌کند.\end{tabular}} & \begin{tabular}[c]{@{}r@{}}۴- سیستم نتیجه‌ی جستجوی کاربر\\  را در قالب یک لیست نمایش می‌دهد.\end{tabular}                                                                     \\ \hline
+				\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۵- TUCEW کاربر نتیجه جستجوی خود\\  را مشاهده می‌کند.\end{tabular}}                    & \multicolumn{1}{l|}{}                                                                                                                                                         \\ \hline
 
-	\begin{table}[H]
-		\caption{جدول مورد کاربرد گسترده 13}
-		\label{tab:ext-uc13}
-		\begin{tabular}{|rr|}
-			\hline
-			\multicolumn{2}{|r|}{\textbf{:UC13 جستجوی پیشرفته}}                                                                                                                                                                                                                                           \\ \hline
-			\multicolumn{2}{|r|}{\textbf{پیش شرط: -}}                                                                                                                                                                                                                                                                             \\ \hline
-			\multicolumn{1}{|c|}{\textbf{کنشگر: کاربر}}                                                                                           & \multicolumn{1}{c|}{\textbf{سیستم: سامانه کارا}}                                                                                                                              \\ \hline
-			\multicolumn{1}{|l|}{\textbf{}}                                                                                                       & ۰- سیستم صفحه اصلی را نمایش می‌دهد.                                                                                                                                           \\ \hline
-			\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۱- TUCBW کاربر روی پیوند «جستجوی \\ پیشرفته» در صفحه اصلی کلیک می‌کند.\end{tabular}}  & \begin{tabular}[c]{@{}r@{}}۲- سیستم صفحه جستجوی پیشرفته و گزینه‌های\\  پالایه جستجوی پیشرفته مانند گروه شغلی،\\  شهر، نوع همکاری، سبک تعامل و … را نمایش می‌دهد.\end{tabular} \\ \hline
-			\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۳- کاربر اطلاعات مورد نظر خود را \\ در صفحه جستجوی پیشرفته وارد می‌کند.\end{tabular}} & \begin{tabular}[c]{@{}r@{}}۴- سیستم نتیجه‌ی جستجوی کاربر\\  را در قالب یک لیست نمایش می‌دهد.\end{tabular}                                                                     \\ \hline
-			\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۵- TUCEW کاربر نتیجه جستجوی خود\\  را مشاهده می‌کند.\end{tabular}}                    & \multicolumn{1}{l|}{}                                                                                                                                                         \\ \hline
+			\end{tabular}
+		\end{table}
 
-		\end{tabular}
-	\end{table}
+		\begin{table}[H]
+			\caption{جدول مورد کاربرد گسترده 18}
+			\label{tab:ext-uc18}
+			\begin{tabular}{|rr|}
+				\hline
+				\rowcolor{Gainsboro!60}
+				\multicolumn{2}{|r|}{\textbf{:UC18 ارسال درخواست شغلی}}                                                                                                                                                                                                                                                                                                                                                    \\ \hline
+				\multicolumn{2}{|r|}{\textbf{پیش شرط: کارجو باید وارد حساب کاربری خود شده باشد و رزومه ساخته باشد.}}                                                                                                                                                                                                                                                                                                                               \\ \hline
+				\multicolumn{1}{|c|}{\textbf{کنشگر: کارجو}}                                                                                                                                        & \multicolumn{1}{c|}{\textbf{سیستم:سامانه کارا}}                                                                                                                                                                                               \\ \hline
+				\multicolumn{1}{|l|}{\textbf{}}                                                                                                                                                    & ۰- سیستم صفحه آگهی را به کارجو نمایش می‌دهد.                                                                                                                                                                                                  \\ \hline
+				\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۱- TUCBW کارجو روی گزینه «ارسال \\ درخواست شغلی» در صفحه آگهی کلیک می‌کند.\end{tabular}}                                           & \begin{tabular}[c]{@{}r@{}}۲- سیستم صفحه تایید اطلاعات و پیش شرط‌های\\  لازم مانند تست شخصیتی و فرم پرسشنامه\\  برای ارسال درخواست را به کارجو نمایش می‌دهد.\end{tabular}                                                                     \\ \hline
+				\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}3- در صورت وجود فرم پرسشنامه، کاربر\\  آن را تکمیل می‌کند.در نهایت روی گزینه \\ "تایید و ارسال درخواست" کلیک می‌کند.\end{tabular}} & \begin{tabular}[c]{@{}r@{}}4- \\ الف) در صورتی که درصد تطابق رزومه و آگهی\\  بالاتر از ۵۰ درصد بود سیستم پیام \\ "ارسال درخواست شغلی با موفقیت انجام شد." \\  را نمایش می‌دهد.\\ ب) در غیر این صورت سیستم پیام خطا نمایش می‌دهد.\end{tabular} \\ \hline
+				\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}5- TUCEW کارجو نتیجه ارسال درخواست\\  شغلی خود را در قالب پیام مناسب \\ مشاهده می‌کند.\end{tabular}}                            & \multicolumn{1}{l|}{}                                                                                                                                                                                                                         \\ \hline
 
-	\begin{table}[H]
-		\caption{جدول مورد کاربرد گسترده 18}
-		\label{tab:ext-uc18}
-		\begin{tabular}{|rr|}
-			\hline
-			\multicolumn{2}{|r|}{\textbf{:UC18 ارسال درخواست شغلی}}                                                                                                                                                                                                                                                                                                                                                    \\ \hline
-			\multicolumn{2}{|r|}{\textbf{پیش شرط: کارجو باید وارد حساب کاربری خود شده باشد و رزومه ساخته باشد.}}                                                                                                                                                                                                                                                                                                                               \\ \hline
-			\multicolumn{1}{|c|}{\textbf{کنشگر: کارجو}}                                                                                                                                        & \multicolumn{1}{c|}{\textbf{سیستم:سامانه کارا}}                                                                                                                                                                                               \\ \hline
-			\multicolumn{1}{|l|}{\textbf{}}                                                                                                                                                    & ۰- سیستم صفحه آگهی را به کارجو نمایش می‌دهد.                                                                                                                                                                                                  \\ \hline
-			\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۱- TUCBW کارجو روی گزینه «ارسال \\ درخواست شغلی» در صفحه آگهی کلیک می‌کند.\end{tabular}}                                           & \begin{tabular}[c]{@{}r@{}}۲- سیستم صفحه تایید اطلاعات و پیش شرط‌های\\  لازم مانند تست شخصیتی و فرم پرسشنامه\\  برای ارسال درخواست را به کارجو نمایش می‌دهد.\end{tabular}                                                                     \\ \hline
-			\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}3- در صورت وجود فرم پرسشنامه، کاربر\\  آن را تکمیل می‌کند.در نهایت روی گزینه \\ "تایید و ارسال درخواست" کلیک می‌کند.\end{tabular}} & \begin{tabular}[c]{@{}r@{}}4- \\ الف) در صورتی که درصد تطابق رزومه و آگهی\\  بالاتر از ۵۰ درصد بود سیستم پیام \\ "ارسال درخواست شغلی با موفقیت انجام شد." \\  را نمایش می‌دهد.\\ ب) در غیر این صورت سیستم پیام خطا نمایش می‌دهد.\end{tabular} \\ \hline
-			\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}5- TUCEW کارجو نتیجه ارسال درخواست\\  شغلی خود را در قالب پیام مناسب \\ مشاهده می‌کند.\end{tabular}}                            & \multicolumn{1}{l|}{}                                                                                                                                                                                                                         \\ \hline
+			\end{tabular}
+		\end{table}
 
-		\end{tabular}
-	\end{table}
+		\begin{table}[ht]
+			\caption{جدول مورد کاربرد گسترده 21}
+			\label{tab:ext-uc21}
+			\centering
 
-	\begin{table}[H]
-		\caption{جدول مورد کاربرد گسترده 21}
-		\label{tab:ext-uc21}
-		\begin{tabular}{|rr|}
-			\hline
-			\multicolumn{2}{|r|}{\textbf{:UC21 ثبت مشکل آگهی}}                                                                                                                                                                        \\ \hline
-			\multicolumn{2}{|r|}{\textbf{پیش شرط: -  کارجو باید وارد حساب کاربری خود شده باشد.}}                                                                                                                                                              \\ \hline
-			\multicolumn{1}{|c|}{\textbf{کنشگر: کارجو}}                                                                                   & \multicolumn{1}{c|}{\textbf{سیستم:سامانه کارا}}                                                                   \\ \hline
-			\multicolumn{1}{|l|}{\textbf{}}                                                                                               & \begin{tabular}[c]{@{}r@{}}۰- سیستم صفحه آگهی شغلی را\\  نمایش می‌دهد.\end{tabular}                               \\ \hline
-			\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۱- TUCBW کارجو بر روی «ثبت مشکل»\\  در صفحه آگهی کلیک می‌کند.\end{tabular}}   & \begin{tabular}[c]{@{}r@{}}۲- سیستم یک فرم ثبت مشکل که شامل عنوان\\  و شرح مشکل است را نمایش می‌دهد.\end{tabular} \\ \hline
-			\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۳- کارجو اطلاعات را وارد کرده\\  و روی گزینه "ثبت" کلیک می‌کند.\end{tabular}} & \begin{tabular}[c]{@{}r@{}}۴- سیستم پیغام «مشکل با موفقیت\\  ثبت شد» را نمایش می‌دهد.\end{tabular}                \\ \hline
-			\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۵- TUCEW کارجو پیغام مناسب\\  را مشاهده می‌کند.\end{tabular}}                 & \multicolumn{1}{l|}{}                                                                                             \\ \hline
+			\begin{tabular}{|rr|}
+				\hline
+				\rowcolor{Gainsboro!60}
+				\multicolumn{2}{|r|}{\textbf{:UC21 ثبت مشکل آگهی}}                                                                                                                                                                        \\ \hline
+				\multicolumn{2}{|r|}{\textbf{پیش شرط: -  کارجو باید وارد حساب کاربری خود شده باشد.}}                                                                                                                                                              \\ \hline
+				\multicolumn{1}{|c|}{\textbf{کنشگر: کارجو}}                                                                                   & \multicolumn{1}{c|}{\textbf{سیستم:سامانه کارا}}                                                                   \\ \hline
+				\multicolumn{1}{|l|}{\textbf{}}                                                                                               & \begin{tabular}[c]{@{}r@{}}۰- سیستم صفحه آگهی شغلی را\\  نمایش می‌دهد.\end{tabular}                               \\ \hline
+				\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۱- TUCBW کارجو بر روی «ثبت مشکل»\\  در صفحه آگهی کلیک می‌کند.\end{tabular}}   & \begin{tabular}[c]{@{}r@{}}۲- سیستم یک فرم ثبت مشکل که شامل عنوان\\  و شرح مشکل است را نمایش می‌دهد.\end{tabular} \\ \hline
+				\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۳- کارجو اطلاعات را وارد کرده\\  و روی گزینه "ثبت" کلیک می‌کند.\end{tabular}} & \begin{tabular}[c]{@{}r@{}}۴- سیستم پیغام «مشکل با موفقیت\\  ثبت شد» را نمایش می‌دهد.\end{tabular}                \\ \hline
+				\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۵- TUCEW کارجو پیغام مناسب\\  را مشاهده می‌کند.\end{tabular}}                 & \multicolumn{1}{l|}{}                                                                                             \\ \hline
 
-		\end{tabular}
-	\end{table}
+			\end{tabular}
+		\end{table}
 
-	\begin{table}[]
-		\caption{جدول مورد کاربرد گسترده 24}
-		\label{tab:ext-uc24}
-		\begin{tabular}{|rr|}
-			\hline
-			\multicolumn{2}{|r|}{\textbf{:UC24 ساخت رزومه}}                                                                                                                                                                                                                                                                                           \\ \hline
-			\multicolumn{2}{|r|}{\textbf{پیش‌ شرط: کارجو باید اطلاعات کاربری خود را تکمیل کرده باشد.}}                                                                                                                                                                                                                                                                        \\ \hline
-			\multicolumn{1}{|c|}{\textbf{کنشگر: کارجو}}                                                                                                             & \multicolumn{1}{c|}{\textbf{سیستم: سامانه کارا}}                                                                                                                                                        \\ \hline
-			\multicolumn{1}{|l|}{\textbf{}}                                                                                                                         & ۰- سیستم صفحه کاربری کارجو را نمایش می‌دهد.                                                                                                                                                             \\ \hline
-			\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۱- TUCBW کارجو بر روی گزینه "ساخت رزومه" \\ در صفحه کاربری خود کلیک می‌کند.\end{tabular}}               & \begin{tabular}[c]{@{}r@{}}۲- سیستم صفحه ساخت رزومه که شامل فرمی \\ از اطلاعات مانند درباره من، اطلاعات تحصیلی، \\ سوابق شغلی، مهارت‌ها و … را به دو\\  زبان انگلیسی و فارسی نمایش می‌دهد.\end{tabular} \\ \hline
-			\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۳- کاربر اطلاعات خود را به فارسی یا \\ انگلیسی وارد می‌کند و روی دکمه\\  ثبت کلیک می‌کند.\end{tabular}} & \begin{tabular}[c]{@{}r@{}}۴- سیستم نتیجه ساخت رزومه \\ را به کاربر نمایش می‌دهد.\end{tabular}                                                                                                          \\ \hline
-			\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۵- TUCEW کارجو نتیجه ساخت رزومه \\ خود را مشاهده می‌کند.\end{tabular}}                                  & \multicolumn{1}{l|}{}                                                                                                                                                                                   \\ \hline
+		\begin{table}[H]
+			\caption{جدول مورد کاربرد گسترده 24}
+			\label{tab:ext-uc24}
+			\begin{tabular}{|rr|}
+				\hline
+				\rowcolor{Gainsboro!60}
+				\multicolumn{2}{|r|}{\textbf{:UC24 ساخت رزومه}}                                                                                                                                                                                                                                                                                           \\ \hline
+				\multicolumn{2}{|r|}{\textbf{پیش‌ شرط: کارجو باید اطلاعات کاربری خود را تکمیل کرده باشد.}}                                                                                                                                                                                                                                                                        \\ \hline
+				\multicolumn{1}{|c|}{\textbf{کنشگر: کارجو}}                                                                                                             & \multicolumn{1}{c|}{\textbf{سیستم: سامانه کارا}}                                                                                                                                                        \\ \hline
+				\multicolumn{1}{|l|}{\textbf{}}                                                                                                                         & ۰- سیستم صفحه کاربری کارجو را نمایش می‌دهد.                                                                                                                                                             \\ \hline
+				\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۱- TUCBW کارجو بر روی گزینه "ساخت رزومه" \\ در صفحه کاربری خود کلیک می‌کند.\end{tabular}}               & \begin{tabular}[c]{@{}r@{}}۲- سیستم صفحه ساخت رزومه که شامل فرمی \\ از اطلاعات مانند درباره من، اطلاعات تحصیلی، \\ سوابق شغلی، مهارت‌ها و … را به دو\\  زبان انگلیسی و فارسی نمایش می‌دهد.\end{tabular} \\ \hline
+				\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۳- کاربر اطلاعات خود را به فارسی یا \\ انگلیسی وارد می‌کند و روی دکمه\\  ثبت کلیک می‌کند.\end{tabular}} & \begin{tabular}[c]{@{}r@{}}۴- سیستم نتیجه ساخت رزومه \\ را به کاربر نمایش می‌دهد.\end{tabular}                                                                                                          \\ \hline
+				\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۵- TUCEW کارجو نتیجه ساخت رزومه \\ خود را مشاهده می‌کند.\end{tabular}}                                  & \multicolumn{1}{l|}{}                                                                                                                                                                                   \\ \hline
 
-		\end{tabular}
-	\end{table}
+			\end{tabular}
+		\end{table}
 
-	\begin{table}[]
-		\caption{جدول مورد کاربرد گسترده 28}
-		\label{tab:ext-uc28}
-		\begin{tabular}{|rr|}
-			\hline
-			\multicolumn{2}{|r|}{\textbf{:UC28 ثبت آگهی}}                                                                                                                                                                                                                                                 \\ \hline
-			\multicolumn{2}{|r|}{\textbf{پیش شرط: کارفرما باید وارد حساب کاربری خود شده باشد.}}                                                                                                                                                                                                                                   \\ \hline
-			\multicolumn{1}{|c|}{\textbf{کنشگر: کارفرما}}                                                                                          & \multicolumn{1}{c|}{\textbf{سیستم: سامانه کارا}}                                                                                                                             \\ \hline
-			\multicolumn{1}{|l|}{\textbf{}}                                                                                                        & ۰- سیستم صفحه کاربری کارفرما را نمایش می‌دهد.                                                                                                                                \\ \hline
-			\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۱- TUCBW کارفرما روی گزینه «ثبت آگهی» در\\  صفحه کاربری خود کلیک می‌کند.\end{tabular}} & \begin{tabular}[c]{@{}r@{}}۲- سیستم صفحه‌ی ساخت آگهی را که شامل فرمی \\ از اطلاعاتی مانند عنوان شغلی، نوع همکاری، \\ بازه حقوق، سطح ارشدیت و … را نمایش می‌دهد.\end{tabular} \\ \hline
-			\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۳- کاربر اطلاعات خود را وارد می‌کند \\ و سپس روی دکمه «ثبت» کلیک می‌کند.\end{tabular}} & \begin{tabular}[c]{@{}r@{}}۴- سیستم در صورت معتبر بودن اطلاعات، \\ آگهی را می‌سازد و نتیجه را به کاربر نمایش می‌دهد.\end{tabular}                                            \\ \hline
-			\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۵- TUCEW کارفرما نتیجه ساخت آگهی خود\\  را مشاهده می‌کند.\end{tabular}}                & \multicolumn{1}{l|}{}                                                                                                                                                        \\ \hline
+		\begin{table}[H]
+			\caption{جدول مورد کاربرد گسترده 28}
+			\label{tab:ext-uc28}
+			\begin{tabular}{|rr|}
+				\hline
+				\rowcolor{Gainsboro!60}
+				\multicolumn{2}{|r|}{\textbf{:UC28 ثبت آگهی}}                                                                                                                                                                                                                                                 \\ \hline
+				\multicolumn{2}{|r|}{\textbf{پیش شرط: کارفرما باید وارد حساب کاربری خود شده باشد.}}                                                                                                                                                                                                                                   \\ \hline
+				\multicolumn{1}{|c|}{\textbf{کنشگر: کارفرما}}                                                                                          & \multicolumn{1}{c|}{\textbf{سیستم: سامانه کارا}}                                                                                                                             \\ \hline
+				\multicolumn{1}{|l|}{\textbf{}}                                                                                                        & ۰- سیستم صفحه کاربری کارفرما را نمایش می‌دهد.                                                                                                                                \\ \hline
+				\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۱- TUCBW کارفرما روی گزینه «ثبت آگهی» در\\  صفحه کاربری خود کلیک می‌کند.\end{tabular}} & \begin{tabular}[c]{@{}r@{}}۲- سیستم صفحه‌ی ساخت آگهی را که شامل فرمی \\ از اطلاعاتی مانند عنوان شغلی، نوع همکاری، \\ بازه حقوق، سطح ارشدیت و … را نمایش می‌دهد.\end{tabular} \\ \hline
+				\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۳- کاربر اطلاعات خود را وارد می‌کند \\ و سپس روی دکمه «ثبت» کلیک می‌کند.\end{tabular}} & \begin{tabular}[c]{@{}r@{}}۴- سیستم در صورت معتبر بودن اطلاعات، \\ آگهی را می‌سازد و نتیجه را به کاربر نمایش می‌دهد.\end{tabular}                                            \\ \hline
+				\multicolumn{1}{|r|}{\begin{tabular}[c]{@{}r@{}}۵- TUCEW کارفرما نتیجه ساخت آگهی خود\\  را مشاهده می‌کند.\end{tabular}}                & \multicolumn{1}{l|}{}                                                                                                                                                        \\ \hline
 
-		\end{tabular}
-	\end{table}
-\end{center}
+			\end{tabular}
+		\end{table}
+	\end{center}
 	\newpage
 
 \end{document}
